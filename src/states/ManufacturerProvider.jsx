@@ -24,7 +24,7 @@ const ManufacturerProvider = (props) => {
         setLoading(true);
         try {
             const data = await apiManufacturers.read();
-            setManufacturer(data);
+            setManufacturer(data["hydra:member"]);
         } catch(error){
             console.error('[states/ManufacturerProvider] Failed to load data', {error})
         } finally {

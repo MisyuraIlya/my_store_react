@@ -6,10 +6,13 @@ import ManufacturerCard from '../components/ManufacturerCard';
 const Manufacturers = () => {
 
     const { loading, manufacturer,  methods } = useManufacturer();
-
     return (
         <div>
-            <ManufacturerCard />
+            {
+                loading 
+                ? <h2>loading..</h2> 
+                : <ManufacturerCard />
+            }
         </div>
     );
 };
