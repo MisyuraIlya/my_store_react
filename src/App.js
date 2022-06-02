@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Manufacturers from './pages/Manufacturers';
 import Categories from './pages/Categories';
 
+import { ManufacturerProvider } from './states/ManufacturerProvider';
 
 function App() {
 
@@ -12,11 +13,13 @@ function App() {
     <div className="App">
 
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}/>
-          <Route path="/manufacturers" element={<Manufacturers />}/>
-          <Route path="/categories" element={<Categories />}/>
-        </Routes>
+        <ManufacturerProvider>
+          <Routes>
+            <Route path="/" element={<Home />}/>
+            <Route path="/manufacturers" element={<Manufacturers />}/>
+            <Route path="/categories" element={<Categories />}/>
+          </Routes>
+        </ManufacturerProvider>
       </BrowserRouter>
 
     </div>
