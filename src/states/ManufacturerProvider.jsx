@@ -17,7 +17,7 @@ const ManufacturerProvider = (props) => {
 
     // states
     const [loading,setLoading] = useState(false);
-    const [manufacturer, setManufacturer] = useState()
+    const [manufacturer, setManufacturer] = useState([])
 
     //methods
     const loadManufacturer = async() => {
