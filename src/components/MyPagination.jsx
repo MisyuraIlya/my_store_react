@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pagination,PaginationItem, PaginationLink} from 'reactstrap';
+import { Pagination, PaginationItem, PaginationLink} from 'reactstrap';
 const MyPagination = ({totalNumber}) => {
 
     const number = totalNumber

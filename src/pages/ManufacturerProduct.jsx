@@ -3,15 +3,19 @@ import { useProducts } from '../states/ProductsProvider';
 import { useParams } from 'react-router-dom';
 import { CardGroup, Spinner, Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap';
 import CardSale from '../components/CardSale'
+import MyPagination from '../components/MyPagination';
 
 const ManufacturerProduct = () => {
 
-    const {loading,  productsManufacturer, methods} = useProducts();
+    const {loading, total, productsManufacturer, methods} = useProducts();
     let paramsURL = useParams();
 
     useEffect(() => {
         methods.loadProductsManufacturer(paramsURL.id);
     },[])
+
+    const totalNumber = total / 10;
+    
     return (
         <div>
             prodcut page
@@ -26,6 +30,7 @@ const ManufacturerProduct = () => {
                 )}
             </CardGroup>
             }
+            <MyPagination totalNumber={totalNumber}/>
         </div>
     );
 };

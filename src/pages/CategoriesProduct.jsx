@@ -3,15 +3,19 @@ import { useProducts } from '../states/ProductsProvider';
 import { useParams } from 'react-router-dom';
 import { Spinner,CardGroup} from 'reactstrap';
 import CardSale from '../components/CardSale'
+import MyPagination from '../components/MyPagination';
 const CategoriesProduct = () => {
 
-    const {loading, productCategories, methods} = useProducts();
+    const {loading, total,  productCategories, methods} = useProducts();
     let paramsURL = useParams();
 
     useEffect(() => {
         methods.loadProductsCategories(paramsURL.id)
     }, [])
 
+    console.log(total)
+    const totalNumber = total / 10;
+    console.log(totalNumber)
     return (
         <div>
             categories product  page
@@ -26,6 +30,7 @@ const CategoriesProduct = () => {
                 )}
             </CardGroup>
             }
+            <MyPagination totalNumber={totalNumber}/>
         </div>
     );
 };
