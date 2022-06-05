@@ -6,7 +6,12 @@ const readManufacturer = async (id) => {
     return response.data
 }
 
+const readCategories = async (id) => {
+    const response = await axios(`${API}/products?categories.id=${id}`)
+    return response.data
+}
 
-const apiProducts = {readManufacturer};
+
+const apiProducts = {readManufacturer, readCategories};
 
 export default apiProducts;

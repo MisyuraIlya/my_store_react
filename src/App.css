@@ -1,0 +1,15 @@
+.card_img{
+    width: 150px;
+    height: 150px;
+}
+
+.card {
+    width: 300px;
+    margin: 20px;
+}
+
+.container_gorup_card{
+    width: 80%;
+    margin: 0 auto;
+    justify-content: center;
+}

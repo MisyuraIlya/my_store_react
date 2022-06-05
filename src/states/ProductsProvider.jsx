@@ -15,8 +15,9 @@ const ProductsProvider = (props) => {
 
     const [loading,setLoading] = useState(false);
     const [productsManufacturer, setProductsManufacturer] = useState([])
+    const [productCategories, setProductCategories] = useState([])
 
-    const loadProductsManufacturer = async(id) => {
+    const loadProductsManufacturer = async (id) => {
         setLoading(true);
         try{
             const data = await apiProducts.readManufacturer(id);
@@ -28,13 +29,27 @@ const ProductsProvider = (props) => {
         }
     }
 
+    const loadProductsCategories = async (id) => {
+        setLoading(true);
+        try{
+            const data = await apiProducts.readCategories(id);
+            setProductCategories(data["hydra:member"]);
+        } catch(error) {
+            console.error('[states/ProductsProvider] faield to load data')
+        } finally {
+            setLoading(false);
+        }
+    }
+
     const methods = {
         loadProductsManufacturer,
+        loadProductsCategories,
     }
 
     const value = {
         loading,
         productsManufacturer,
+        productCategories,
         methods
     }
 

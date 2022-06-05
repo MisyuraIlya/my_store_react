@@ -4,10 +4,12 @@ import {BrowserRouter,Routes,Route,} from "react-router-dom";
 import Home from './pages/Home';
 import Manufacturers from './pages/Manufacturers';
 import Categories from './pages/Categories';
-import Products from './pages/Products';
+import ManufacturerProduct from './pages/ManufacturerProduct';
+import CategoriesProduct from './pages/CategoriesProduct';
 import { ManufacturerProvider } from './states/ManufacturerProvider';
 import { ProductsProvider } from './states/ProductsProvider';
-import Navbar from './components/Navbar';
+import { CategoriesProvider } from './states/CategoriesProvider';
+import HeaderNav from './components/HeaderNav';
 function App() {
 
   return (
@@ -16,13 +18,16 @@ function App() {
       <BrowserRouter>
         <ManufacturerProvider>
           <ProductsProvider>
-          <Navbar/> 
-            <Routes>
-              <Route path="/" element={<Home />}/>
-              <Route path="/manufacturers" element={<Manufacturers />}/>
-              <Route path="/products/:id" element={<Products />}/>
-              <Route path="/categories" element={<Categories />}/>
-            </Routes>
+            <CategoriesProvider>
+            <HeaderNav/> 
+              <Routes>
+                <Route path="/" element={<Home />}/>
+                <Route path="/manufacturers" element={<Manufacturers />}/>
+                <Route path="/manufacturer/:id" element={<ManufacturerProduct />}/>
+                <Route path="/categories/:id" element={<CategoriesProduct />}/>
+                <Route path="/categories" element={<Categories />}/>
+              </Routes>
+            </CategoriesProvider>
           </ProductsProvider>
         </ManufacturerProvider>
       </BrowserRouter>

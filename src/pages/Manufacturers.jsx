@@ -39,7 +39,7 @@ const Manufacturers = () => {
                             {item.description}
                         </CardText>
                         <Button>
-                            <Link to={`/products/${item.id}`}> View products</Link>
+                            <Link to={`/manufacturer/${item.id}`}> View products</Link>
                            
                         </Button>
                         </CardBody>
