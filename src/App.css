@@ -13,3 +13,10 @@
     margin: 0 auto;
     justify-content: center;
 }
+
+.spinner_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 300px;
+}

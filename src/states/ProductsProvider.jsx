@@ -19,10 +19,10 @@ const ProductsProvider = (props) => {
     const [total, setTotal] = useState()
     
 
-    const loadProductsManufacturer = async (id) => {
+    const loadProductsManufacturer = async (id,page) => {
         setLoading(true);
         try{
-            const data = await apiProducts.readManufacturer(id);
+            const data = await apiProducts.readManufacturer(id,page);
             setTotal(data["hydra:totalItems"]);
             setProductsManufacturer(data["hydra:member"]);
         } catch(error) {
@@ -32,10 +32,10 @@ const ProductsProvider = (props) => {
         }
     }
 
-    const loadProductsCategories = async (id) => {
+    const loadProductsCategories = async (id,page) => {
         setLoading(true);
         try{
-            const data = await apiProducts.readCategories(id);
+            const data = await apiProducts.readCategories(id,page);
             setTotal(data["hydra:totalItems"])
             setProductCategories(data["hydra:member"]);
         } catch(error) {

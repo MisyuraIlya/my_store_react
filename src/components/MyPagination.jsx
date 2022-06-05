@@ -1,6 +1,6 @@
 import React from 'react';
 import { Pagination, PaginationItem, PaginationLink} from 'reactstrap';
-const MyPagination = ({totalNumber}) => {
+const MyPagination = ({currentPage, setCurrentPage, totalNumber}) => {
 
     const number = totalNumber
     let num = [];
@@ -9,7 +9,12 @@ const MyPagination = ({totalNumber}) => {
             num.push(i)
         }
     }
-    console.log(num)
+
+    const paginationHandler = (number) => {
+        console.log(number)
+        setCurrentPage(number)
+    }
+
     return (
         <div>
             <Pagination
@@ -22,9 +27,9 @@ const MyPagination = ({totalNumber}) => {
                 href="#"
                 />
             </PaginationItem>
-            {num.map((number) => 
-                <PaginationItem>
-                    <PaginationLink href="#">
+            {num.map((number, index ) => 
+                <PaginationItem key={index} onClick={() => paginationHandler(number+1)}>
+                    <PaginationLink >
                     {number+1}
                     </PaginationLink>
                 </PaginationItem>

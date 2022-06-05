@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useProducts } from '../states/ProductsProvider';
 import { useParams } from 'react-router-dom';
 import { Spinner,CardGroup} from 'reactstrap';
@@ -7,20 +7,23 @@ import MyPagination from '../components/MyPagination';
 const CategoriesProduct = () => {
 
     const {loading, total,  productCategories, methods} = useProducts();
+    const [currentPage, setCurrentPage] = useState(1)
     let paramsURL = useParams();
 
     useEffect(() => {
-        methods.loadProductsCategories(paramsURL.id)
-    }, [])
+        methods.loadProductsCategories(paramsURL.id, currentPage)
+    }, [currentPage])
 
-    console.log(total)
-    const totalNumber = total / 10;
-    console.log(totalNumber)
+    const totalNumber = Math.ceil(total / 5);
     return (
         <div>
             categories product  page
             {
-            loading ? <Spinner>Loading...</Spinner>
+            loading 
+            ?
+            <div className='spinner_center'>
+                <Spinner>Loading...</Spinner>
+            </div> 
             : 
             <CardGroup className='container_gorup_card'>
                 {productCategories.map((item, index) => 
@@ -30,7 +33,7 @@ const CategoriesProduct = () => {
                 )}
             </CardGroup>
             }
-            <MyPagination totalNumber={totalNumber}/>
+            <MyPagination currentPage={currentPage} setCurrentPage={setCurrentPage} totalNumber={totalNumber}/>
         </div>
     );
 };
