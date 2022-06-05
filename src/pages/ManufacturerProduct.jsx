@@ -3,7 +3,6 @@ import { useProducts } from '../states/ProductsProvider';
 import { useParams } from 'react-router-dom';
 import { CardGroup, Spinner, Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap';
 import CardSale from '../components/CardSale'
-import MyPagination from '../components/MyPagination';
 
 const ManufacturerProduct = () => {
 
@@ -27,7 +26,6 @@ const ManufacturerProduct = () => {
                 )}
             </CardGroup>
             }
-            <MyPagination/>
         </div>
     );
 };

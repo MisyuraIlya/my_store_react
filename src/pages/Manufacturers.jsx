@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 import {useManufacturer} from '../states/ManufacturerProvider'
-import ManufacturerCard from '../components/ManufacturerCard';
 import { Link } from 'react-router-dom';
 import { Spinner, Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap';
 
@@ -11,13 +10,6 @@ const Manufacturers = () => {
     const { loading, manufacturer,  methods } = useManufacturer();
     return (
         <div>
-            {/* {
-                loading 
-                ? <h2>loading..</h2> 
-                : manufacturer.map((item, index) => {<ManufacturerCard key={index} item={item}/>})
-                
-            } */}
-
             {
                 loading 
                 ? <Spinner>Loading...</Spinner>

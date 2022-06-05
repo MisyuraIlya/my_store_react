@@ -20,15 +20,6 @@ const Categories = () => {
                         <CardTitle tag="h5">
                             {item.id}{item.title}
                         </CardTitle>
-                        {/* <CardSubtitle
-                            className="mb-2 text-muted"
-                            tag="h6"
-                        >
-                            {item.country}
-                        </CardSubtitle> */}
-                        {/* <CardText>
-                            {item.description}
-                        </CardText> */}
                         <Button>
                             <Link to={`/categories/${item.id}`}> View products</Link>
                         </Button>
