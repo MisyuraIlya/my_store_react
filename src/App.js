@@ -10,6 +10,7 @@ import { ManufacturerProvider } from './states/ManufacturerProvider';
 import { ProductsProvider } from './states/ProductsProvider';
 import { CategoriesProvider } from './states/CategoriesProvider';
 import HeaderNav from './components/HeaderNav';
+import Registration from './pages/Registration';
 function App() {
 
   return (
@@ -26,6 +27,7 @@ function App() {
                 <Route path="/manufacturer/:id" element={<ManufacturerProduct />}/>
                 <Route path="/categories/:id" element={<CategoriesProduct />}/>
                 <Route path="/categories" element={<Categories />}/>
+                <Route path="/registration" element={<Registration />}/>
               </Routes>
             </CategoriesProvider>
           </ProductsProvider>
