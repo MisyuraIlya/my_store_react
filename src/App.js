@@ -11,6 +11,7 @@ import { ProductsProvider } from './states/ProductsProvider';
 import { CategoriesProvider } from './states/CategoriesProvider';
 import HeaderNav from './components/HeaderNav';
 import Registration from './pages/Registration';
+import Login from './pages/Login';
 function App() {
 
   return (
@@ -28,6 +29,7 @@ function App() {
                 <Route path="/categories/:id" element={<CategoriesProduct />}/>
                 <Route path="/categories" element={<Categories />}/>
                 <Route path="/registration" element={<Registration />}/>
+                <Route path="/login" element={<Login />}/>
               </Routes>
             </CategoriesProvider>
           </ProductsProvider>

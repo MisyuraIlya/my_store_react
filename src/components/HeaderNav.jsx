@@ -52,9 +52,12 @@ const HeaderNav = () => {
                 </DropdownMenu>
                 </UncontrolledDropdown>
             </Nav>
-            <NavbarText>
-                Simple Text
-            </NavbarText>
+            <NavItem style={{paddingTop:'8px'}}>
+                    <Link to="login" style={{ textDecoration: 'none', paddingRight: '20px', color:'#ced4da' }}>Login</Link>
+                </NavItem>
+                <NavItem style={{paddingTop:'8px'}}>
+                    <Link to="registration" style={{ textDecoration: 'none', paddingRight: '20px', color:'#ced4da' }}>Register</Link>
+                </NavItem>
             </Collapse>
         </Navbar>
         </div>

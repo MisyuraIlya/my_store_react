@@ -3,7 +3,8 @@ import {  FormGroup, Label, Input, Button} from 'reactstrap';
 const Registration = () => {
 
     const [username, setUsername] = useState('')
-    const [password, setPasswkrd] = useState('')
+    const [password, setPassword] = useState('')
+    const [secondPassword, setSecoondPassword] = useState('')
 
     console.log(username,password)
     return (
@@ -14,7 +15,11 @@ const Registration = () => {
         </FormGroup>
         <FormGroup>
             <Label for="examplePassword" hidden>Password</Label>
-            <Input id="examplePassword" name="password" placeholder="Password" type="password" value={password} onChange={(e) => setPasswkrd(e.target.value)}/>
+            <Input id="examplePassword" name="password" placeholder="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+        </FormGroup>
+        <FormGroup>
+            <Label for="examplePassword" hidden>second Password</Label>
+            <Input id="examplePassword" name="repeat password" placeholder="repeat Password" type="password" value={secondPassword} onChange={(e) => setSecoondPassword(e.target.value)}/>
         </FormGroup>
         <Button>Submit</Button>
         </>
